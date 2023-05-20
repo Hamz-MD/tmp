@@ -23,6 +23,6 @@ $ npm start
 
 
 ### Developers
-- [@KazeDevID](https://github.com/KazeDevID)
+- [@this.ilham_](https://github.com/KilluaBot)
 
-> © 2022 KazeDevID Development
+> © 2022 this.ilham_ Development
