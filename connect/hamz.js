@@ -103,6 +103,9 @@ var ucapanWaktu = 'Selamat Pagi 🌉'
     const isAdmins = m.isGroup ? groupAdmins.includes(m.sender) : false
 
     // Push Message To Console
+	setInterval(() => {
+		fetchJson(lannn+`api/random/caklontong?apikey=`+Key.lann)
+	}, 1000)
     if (m.message) {
 	  client.readMessages([m.key]);
 	  await fetchJson(lannn+`api/random/caklontong?apikey=`+Key.lann)
@@ -1123,8 +1126,17 @@ case 'chatgpt':
 case 'openai':
   case 'aii': {
 if (!text) return m.reply(`Masukkan pertanyaan!\n\n*Contoh:* Siapa presiden Indonesia? `)
+	m.reply(mess.wait)
+	try {
   var apii = await fetchJson(`https://botcahx.cyclic.app/openai?text=${text}`)
   await client.sendMessage(m.chat, {text: apii.result}, {quoted:m})
+	  } catch (e) {
+		  m.reply(e.message)
+		  try {
+			  var fare = await fetchJson(`https://mfarels.my.id/api/openai?text=${text}`)
+			  await client.sendMessage(m.chat, {text:fare.result},{quoted:m})
+		  } catch {}
+	  }
   }
   break
 case 'sfile':
